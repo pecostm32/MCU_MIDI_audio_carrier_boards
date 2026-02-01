@@ -3,7 +3,7 @@ To be able to play with the 8 different ESP32 development boards I have, I desig
 On Aliexpress I found two different PCM5102 DAC modules, which can be used with this carrier board. For the ADC I found only one variant of the PCM1808 module, that fits on this board.
 
 For the audio signals there are two connection options:
-1) Mono 6.3mm jack connectors
+1) Mono 6.35mm jack connectors
 2) Stereo 3.5mm jack connectors
 
 The MIDI in port is setup with through hole components for easier soldering. I chose for this as MIDI in might be used more than MIDI out. The MIDI out port is setup with SMD components.
@@ -26,3 +26,15 @@ To receive data use:               "amidi -d -p hw:1,0,0"
 To send data use                   "amidi -s "rom1a.syx" -p hw:1,0,0"
 
 The above commands assume hw:1,0,0 to be the available device.
+
+Some of the used component are sourced from Aliexpress:
+Stereo mini jack PJ-327A  https://www.aliexpress.com/item/1005005394455266.html
+Mono 6.35mm jack          https://www.aliexpress.com/item/1005006612950070.html
+5 pin DIN connector       https://www.aliexpress.com/item/1005006314983600.html
+SN74LVC126                https://www.aliexpress.com/item/1005006250704206.html
+PCM1808 ADC module        https://www.aliexpress.com/item/1005008885079639.html
+PCM5102 DAC module        https://www.aliexpress.com/item/1005006104038963.html
+PCM5102 DAC module        https://www.aliexpress.com/item/1005006829178513.html
+
+The boards I have are made by JLCPCB and costed me 3,61 euro shipped to France. With boards no bigger than 100mm x 100mm the weigth is below 290 grams which allows for reduced
+shipping price when you are willing to wait. Global standard direct line shipping normaly takes up to a couple of weeks at most, but for this board it was only 6 days.
