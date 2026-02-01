@@ -1,0 +1,28 @@
+To be able to play with the 8 different ESP32 development boards I have, I designed a carrier board that gives MIDI in and out plus the option to insert audio ADC and DAC modules.
+
+On Aliexpress I found two different PCM5102 DAC modules, which can be used with this carrier board. For the ADC I found only one variant of the PCM1808 module, that fits on this board.
+
+For the audio signals there are two connection options:
+1) Mono 6.3mm jack connectors
+2) Stereo 3.5mm jack connectors
+
+The MIDI in port is setup with through hole components for easier soldering. I chose for this as MIDI in might be used more than MIDI out. The MIDI out port is setup with SMD components.
+
+To allow for accomodating the 8 different ESP32 development boards the design incorporates several jumpers, that can either be solder type or pin header type.
+In the EasyEDApro design there are two versions of the board of which the Normal_Jumpers varient allows for both jumper options. It also has more information on the silkscreen.
+
+In the Hardware directory there is a pdf file that shows the 8 different jumper settings for the different ESP32 boards.
+
+In the Software directory are Arduino sketches with which I tested the hardware. There is one caviat though, the ESP32-WROOM modules need the FLASH voltage eFuses burned.
+I used the following command on Linux Mint to do this. "./espefuse set_flash_voltage 3.3V"
+See https://docs.espressif.com/projects/esptool/en/latest/esp32/espefuse/set-flash-voltage-cmd.html for more information on this.
+
+To test MIDI the ESP32-S3 and ESP32-S2 need a dedicated MIDI sketch to test the MIDI part. For the other boards I just used serial commands from port 0 to port 1.
+On Linux Mint I used the "amidi" command to send and receive midi.
+
+
+To list the available devices use: "amidi -l"
+To receive data use:               "amidi -d -p hw:1,0,0"
+To send data use                   "amidi -s "rom1a.syx" -p hw:1,0,0"
+
+The above commands assume hw:1,0,0 to be the available device.
