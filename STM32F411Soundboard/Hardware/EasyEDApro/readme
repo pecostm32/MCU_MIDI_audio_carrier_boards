@@ -1,0 +1,6 @@
+In the EasyEDApro project there are two designs. The first one has separate ground planes for the audio in and out sections.
+The second design has a single ground plane.
+
+11-FEB-2026
+The design with the single ground plane is being produced at this time and when it arrives test have to show if there is
+a difference in noise performance.
