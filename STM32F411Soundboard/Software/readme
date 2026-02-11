@@ -1,0 +1,6 @@
+For the STM32 MCU's I did not find support for >16 bit I2S to use in the Arduino environment, so wrote a bare metal bit of code
+that takes a set of samples (left plus right) from the ADC and sends it to the DAC.
+
+The IDE used is the very old netbeans 8.2, but this is make file based so can easily be used with other IDE's or just command line build.
+
+All software that I have in mind will be written on bare metal basis. The Arduino environment is only used for quick and simple testing.
